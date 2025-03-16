@@ -14,6 +14,6 @@
 
         public string FoodDescription { get; set; }
 
-        public TBLCategory Category { get; set; }
+        public Category Category { get; set; }
     }
 }

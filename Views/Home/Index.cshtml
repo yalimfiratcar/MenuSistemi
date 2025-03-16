@@ -1,8 +1,32 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model MenuAndCategory
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h1>Menü Listesi</h1>
+
+<div class="accordion mt-5" id="accordionExample">
+    @foreach (var category in Model.Category)
+    {
+        var menuCount = Model.MenuCount.FirstOrDefault(m => m.CategoryId == category.Id)?.MenuSayisi ?? 0;
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#@category.CategoryName" aria-expanded="false" aria-controls="@category.CategoryName">
+                    @category.CategoryName (@menuCount)
+                </button>
+            </h2>
+            <div id="@category.CategoryName" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <table class="table">
+                    <tbody>
+                        @foreach (var menu in Model.MenuLeftJoin.Where(m => m.CategoryId.ToString() == category.Id.ToString())) 
+                        {
+                            <tr>
+                                <th scope="row"><img src="@menu.FoodImageUrl" style="width:100px" class="img-thumbnail" alt="..."></th>
+                                <td>@menu.FoodName</td>
+                                <td>@menu.FoodPrice TL</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
 </div>
