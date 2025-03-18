@@ -84,6 +84,67 @@ namespace MenuSistemi.Controllers
             TempData["UpgradeCategory"] = " Category Güncelleme Ýþlemi Baþarýyla iþlemi tamamlandý.";
             return RedirectToAction("Editor");
         }
+        public IActionResult DeleteCategory(int Id)
+        {
+            var deleteCategory = _connection.Execute("DELETE FROM Category WHERE Id=@Id", new { Id });
+            TempData["DeleteCategory"] = "Category successfully deleted.";
+            return RedirectToAction("Editor");
+        }
 
+        public IActionResult ProductManager(int Id)
+        {
+            var menuLeftJoin = _connection.Query<MenuLeftJoinCategory>("SELECT * FROM Menu LEFT JOIN Category ON Menu.CategoryId = Category.Id WHERE CategoryId = @CategoryId", new { CategoryId = Id }).ToList();
+            var baslikYazisi = _connection.QueryFirst<Category>("SELECT CategoryName From Category Where Id = @Id", new { Id });
+            var categoryId = _connection.QueryFirst<Category>("SELECT Id FROM Category WHERE Id = @Id", new { Id });
+            ViewBag.CategoryId = categoryId.Id;
+            ViewBag.Baslik = baslikYazisi.CategoryName;
+            return View(menuLeftJoin);
+        }
+
+        [HttpPost]
+        public IActionResult AddProductManager(Menu menu)
+        {
+            var addProduct = _connection.Execute
+              (
+               @"INSERT INTO Menu
+               (CategoryId,FoodName,FoodPrice,FoodImageUrl,FoodDescription)
+               VALUES
+               (@CategoryId,@FoodName,@FoodPrice,@FoodImageUrl,@FoodDescription)", menu
+              );
+
+            TempData["AddProductManager"] = " Ürün Ekleme Ýþlemi Baþarýyla iþlemi tamamlandý.";
+
+            return RedirectToAction("Index");
+
+        }
+
+        public IActionResult DeleteProductManager(int Id)
+        {
+            var deleteProduct = _connection.Execute("DELETE FROM Menu Where MenuId = @MenuId", new { MenuId = Id });
+            TempData["DeleteProductManager"] = " Ürün Silme Ýþlemi Baþarýyla iþlemi tamamlandý.";
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateProductManager(int Id)
+        {
+            var selectUpdateProduct = _connection.QueryFirstOrDefault<Menu>("SELECT * FROM Menu WHERE MenuId = @Id", new { Id = Id });
+
+            return View(selectUpdateProduct);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateProductManager(Menu menu)
+        {
+            var updateProduct = _connection.Execute
+             (
+                @"UPDATE Menu
+                   SET
+                  FoodName = @FoodName,FoodPrice = @FoodPrice,FoodImageUrl = @FoodImageUrl
+                  WHERE MenuId = @MenuId", menu
+             );
+            TempData["UpdateProductManager"] = " Ürün Güncelleme Ýþlemi Baþarýyla iþlemi tamamlandý.";
+            return RedirectToAction("Index");
+        }
     }
 }
