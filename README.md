@@ -1,8 +1,8 @@
-# AcunMedya Akademi Back-End Temel Eitim Projesi - Men¸ Sistemi
+# AcunMedya Akademi Back-End Temel E√∞itim Projesi - Men√º Sistemi
 
-AcunMedya Akademi'deki Back-End Temel Eitim kapsam˝nda geli˛tirdiim Men¸ Sistemi Projesi.
+AcunMedya Akademi'deki Back-End Temel E√∞itim kapsam√Ωnda geli√ætirdi√∞im Men√º Sistemi Projesi.
 
-Projeyi Áal˝˛t˝rabilmek iÁin, a˛a˝daki SQL scriptini veritaban˝n˝za eklemeniz gerekmektedir:
+Projeyi √ßalƒ±≈ütƒ±rabilmek i√ßin, a≈üaƒüƒ±daki SQL scriptini veritabanƒ±nƒ±za eklemeniz gerekmektedir:
 
 ```sql
 USE [MenuSistemiDB]
@@ -41,24 +41,24 @@ CREATE TABLE [dbo].[Menu](
 GO
 SET IDENTITY_INSERT [dbo].[Category] ON 
 
-INSERT [dbo].[Category] ([Id], [CategoryName]) VALUES (1, N'Ba˛lang˝Á')
+INSERT [dbo].[Category] ([Id], [CategoryName]) VALUES (1, N'Ba√ælang√Ω√ß')
 INSERT [dbo].[Category] ([Id], [CategoryName]) VALUES (2, N'AnaYemek')
-INSERT [dbo].[Category] ([Id], [CategoryName]) VALUES (3, N'Tatl˝lar')
-INSERT [dbo].[Category] ([Id], [CategoryName]) VALUES (4, N'›Áecekler')
+INSERT [dbo].[Category] ([Id], [CategoryName]) VALUES (3, N'Tatl√Ωlar')
+INSERT [dbo].[Category] ([Id], [CategoryName]) VALUES (4, N'√ù√ßecekler')
 SET IDENTITY_INSERT [dbo].[Category] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Menu] ON 
 
-INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (2, 1, N'Fit Tabak', 460, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/f37f44bb-4f5b-4e31-83df-e96e73965e35.webp', N'Sucuk+Yumurta+Soan')
-INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (5, 3, N'Muhallebi', 20, N'https://i.nefisyemektarifleri.com/2021/10/15/en-kolay-muhallebi-1.jpg', N'Az ﬁekerli')
+INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (2, 1, N'Fit Tabak', 460, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/f37f44bb-4f5b-4e31-83df-e96e73965e35.webp', N'Sucuk+Yumurta+So√∞an')
+INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (5, 3, N'Muhallebi', 20, N'https://i.nefisyemektarifleri.com/2021/10/15/en-kolay-muhallebi-1.jpg', N'Az √ûekerli')
 INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (6, 3, N'Bal', 30, N'https://bilimgenc.tubitak.gov.tr/sites/default/files/styles/bp-770px-custom_user_desktop_1x/public/Bal.jpg?itok=_7rHMQVl', N'Organik')
-INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (7, 4, N'«ay', 5, N'https://www.popeyes.com.tr/cmsfiles/products/cay.png?v=305', N'Taze')
-INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (8, 4, N'Kahve', 7, N'https://img-kahvedunyasi.mncdn.com/kahvedunyasi/product/500x500/37bfe_Orta_Kavrulmus_Turk_Kahvesi_250g.jpg', N'Gran¸r')
+INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (7, 4, N'√áay', 5, N'https://www.popeyes.com.tr/cmsfiles/products/cay.png?v=305', N'Taze')
+INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (8, 4, N'Kahve', 7, N'https://img-kahvedunyasi.mncdn.com/kahvedunyasi/product/500x500/37bfe_Orta_Kavrulmus_Turk_Kahvesi_250g.jpg', N'Gran√ºr')
 INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (14, 1, N'Sucuklu Yumurta', 100, N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9nT4q8U7n_4R5nbZ4a33rwHmY9lydd7ixdw&s', N'Sucuk+Yumurta')
-INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (15, 1, N'Kepekli Tost', 130, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/04d26860-9d52-4c31-b9ca-df5c98f7fd28.webp', N'«ift Ka˛arl˝')
-INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (16, 1, N'Tad˝m Taba˝', 380, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/b4a0b32f-0375-4b05-983b-6a209a2e03cc.webp', N'MUAMMARA, G›R›T EZME, MAMZANA, TULUM PEYNIRLI PANCAR')
-INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (17, 2, N'Tereya˝nda Bonfile', 890, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/d545ba8e-7fdd-41b7-a15a-b027d2d83305.webp', N'200gr dana bonfile, tereya˝ soya sos ve ha˛lanm˝˛ sebze')
-INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (18, 2, N'Kar˝˛˝k Izgara', 2450, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/20cde0ec-399d-40b3-91f3-8c183a4c746c.webp', N'Kar˝˛˝k ˝zgara')
+INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (15, 1, N'Kepekli Tost', 130, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/04d26860-9d52-4c31-b9ca-df5c98f7fd28.webp', N'√áift Ka√æarl√Ω')
+INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (16, 1, N'Tad√Ωm Taba√∞√Ω', 380, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/b4a0b32f-0375-4b05-983b-6a209a2e03cc.webp', N'MUAMMARA, G√ùR√ùT EZME, MAMZANA, TULUM PEYNIRLI PANCAR')
+INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (17, 2, N'Tereya√∞√Ωnda Bonfile', 890, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/d545ba8e-7fdd-41b7-a15a-b027d2d83305.webp', N'200gr dana bonfile, tereya√∞√Ω soya sos ve ha√ælanm√Ω√æ sebze')
+INSERT [dbo].[Menu] ([MenuId], [CategoryId], [FoodName], [FoodPrice], [FoodImageUrl], [FoodDescription]) VALUES (18, 2, N'Kar√Ω√æ√Ωk Izgara', 2450, N'https://pardonai-images.s3.eu-central-1.amazonaws.com/products/20cde0ec-399d-40b3-91f3-8c183a4c746c.webp', N'Kar√Ω√æ√Ωk √Ωzgara')
 SET IDENTITY_INSERT [dbo].[Menu] OFF
 GO
 
