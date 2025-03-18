@@ -1,6 +1,6 @@
-# AcunMedya Akademi Back-End Temel Eðitim Projesi - Menü Sistemi
+# AcunMedya Akademi Back-End Temel Eğitim Projesi - Menü Sistemi
 
-AcunMedya Akademi'deki Back-End Temel Eðitim kapsamýnda geliþtirdiðim Menü Sistemi Projesi.
+AcunMedya Akademi'deki Back-End Temel Eğitim kapsamında geliştirdiğim Menü Sistemi Projesi.
 
 Projeyi çalıştırabilmek için, aşağıdaki SQL scriptini veritabanınıza eklemeniz gerekmektedir:
 
